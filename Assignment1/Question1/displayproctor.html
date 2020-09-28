@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Proctor Info</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+<script>
+
+    // Called on body's `onload` event
+    function init() {
+        // Retrieving the text input's value which was stored into localStorage
+        var pid = localStorage.getItem("pid");
+        var pname = localStorage.getItem("pname");
+        var pemail = localStorage.getItem("pemail");
+        var pphone = localStorage.getItem("pphone");
+        // Writing the value in the document
+        document.getElementById("pid").innerHTML = "Proctor ID: " + pid;
+        document.getElementById("pname").innerHTML = "Proctor Name: " + pname;
+        document.getElementById("pemail").innerHTML = "Email Address: " + pemail;
+        document.getElementById("pphone").innerHTML = "Phone Number: " + pphone;
+        
+    }
+
+</script>
+</head>    
+
+<body onload="init();">
+	<div id="regForm">
+		<div id="tab">
+			<h2>Proctor Information</h2>
+			<p id="pid"></p>
+			<p id="pname"></p>
+			<p id="pemail"></p>
+			<p id="pphone"></p>
+            <div style="float:left;">
+                <button type="button" id="back" onclick="history.back()">Edit</button>
+            </div>
+			<div style="float:right;">
+				<button type="button" id="back"><a href="index.html">Home</a></button>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

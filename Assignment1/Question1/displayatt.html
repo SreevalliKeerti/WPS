@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Attendance Info</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+<script>
+
+    // Called on body's `onload` event
+    function init() {
+        // Retrieving the text input's value which was stored into localStorage
+        var tclass = localStorage.getItem("tclass");
+        var aclass = localStorage.getItem("aclass");
+        // Writing the value in the document
+        document.getElementById("tclass").innerHTML = "Total classes: " + tclass;
+        document.getElementById("aclass").innerHTML = "No. of classes attended: " + aclass;
+        var per= (aclass/tclass)*100;
+        document.getElementById("percent").innerHTML = "Percentage: " + per +"%";
+    }
+
+</script>
+</head>    
+
+<body onload="init();">
+	<div id="regForm">
+		<div id="tab">
+			<h2>Attendance Information</h2>
+			<p id="tclass"></p>
+			<p id="aclass"></p>
+			<p id="percent"></p>
+			<div style="float:left;">
+				<button type="button" id="back" onclick="history.back()">Edit</button>
+			</div>
+			<div style="float:right;">
+				<button type="button" id="back"><a href="index.html">Home</a></button>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

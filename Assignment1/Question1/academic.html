@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Info</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script>
+    function tosubmit() {
+            // Getting the value of your text input
+            var clg = document.getElementById("clg").value;
+            var degree = document.getElementById("degree")value;
+            var rno = document.getElementById("rno").value;
+            var year = document.getElementById("year").value;
+            var branch = document.getElementById("branch").value;
+            var section = document.getElementById("section").value;
+            var cgpa = document.getElementById("cgpa").value;
+            var yearc = document.getElementById("yearc").value;
+            var board = document.getElementById("board").value;
+            var schl = document.getElementById("schl").value;
+            var per = document.getElementById("per").value;
+            var yearco = document.getElementById("yearco").value;
+            var boardc = document.getElementById("boardc").value;
+            var school = document.getElementById("school").value;
+            var percen = document.getElementById("percen").value;
+            // Storing the value above into localStorage
+            localStorage.setItem("clg", clg);
+            localStorage.setItem("degree", degree);
+            localStorage.setItem("rno", rno);
+            localStorage.setItem("year", year);
+            localStorage.setItem("branch", branch);
+            localStorage.setItem("section", section);
+            localStorage.setItem("cgpa", cgpa);
+            localStorage.setItem("yearc", yearc);
+            localStorage.setItem("board", board);
+            localStorage.setItem("schl", schl);
+            localStorage.setItem("per", per);
+            localStorage.setItem("yearco", yearco);
+            localStorage.setItem("boardc", boardc);
+            localStorage.setItem("school", school);
+            localStorage.setItem("percen", percen);
+
+            return true;
+        }
+  </script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+   <div class="topnav" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="personal.html">Personal Info</a>
+  <a href="academic.html" class="active">Academic Info</a>
+  <a href="proctor.html">Proctor Info</a>
+  <a href="attendance.html">Attendance Info</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+  <form id="regForm" action="display.html" method="get" target="_self" onsubmit="tosubmit()" onreset="refresh()">
+    <div class="tab"><h2>Academic Information:</h2>
+      <h3>Graduation Details:</h3>
+      College Name:
+      <p><input type="text" placeholder="College Name" oninput="this.className = ''" id="clg" name="clg"></p>
+      Degree:
+      <p><input type="text" placeholder="Degree" oninput="this.className = ''" id="degree" name="degree"></p>
+      Year of Study:
+      <p><input type="number" placeholder="Year of Study" oninput="this.className = ''" id="year" name="year"></p>
+      Branch:
+      <p><input type="text" placeholder="Branch" oninput="this.className = ''" id="branch" name="branch"></p>
+      Section:
+      <p><input type="text" placeholder="Section" oninput="this.className = ''" id="section" name="section"></p>
+      CGPA(in %):
+      <p><input type="text" placeholder="CGPA" oninput="this.className = ''" maxlength="2" id="cgpa" name="cgpa" min="1" max="100"></p>
+      <h3>XII Details:</h3>
+      Year of Completion:
+      <p><input type="number" placeholder="Year of Completion" oninput="this.className = ''" id="yearc" name="yearc"></p>
+      Board:
+      <p><input type="text" placeholder="Board" oninput="this.className = ''" id="board" name="board"></p>
+      School:
+      <p><input type="text" placeholder="School Name" oninput="this.className = ''" id="schl" name="schl"></p>
+      Percentage:
+       <p><input type="text" placeholder="Percentage" oninput="this.className = ''" maxlength="2" id="per" name="per" min="1" max="100"></p>
+      <h3>X Details:</h3>
+      Year of Completion:
+      <p><input type="number" placeholder="Year of Completion" oninput="this.className = ''" id="yearco" name="yearco"></p>
+      Board:
+      <p><input type="text" placeholder="Board" oninput="this.className = ''" id="boardc" name="boardc"></p>
+      School:
+      <p><input type="text" placeholder="School Name" oninput="this.className = ''" id="school" name="school"></p>
+      Percentage:
+      <p><input type="text" placeholder="Percentage" oninput="this.className = ''" maxlength="2" id="percen" name="percen" min="1" max="100"></p>
+    </div>
+    <div style="overflow:auto;">
+       <div style="float:left;">
+        <input type="reset" id="reset">
+      </div>
+      <div style="float:right;">
+        <button type="button" id="back"><a href="index.html">Home</a></button>
+        <button type="button" id="submit" onclick="validateForm()">Check</button>
+        <input type="submit" id="submitt">
+      </div>
+    </div>
+  </form>
+
+<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>

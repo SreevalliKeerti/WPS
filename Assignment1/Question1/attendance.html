@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Info</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+  <div class="topnav" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="personal.html">Personal Info</a>
+  <a href="academic.html">Academic Info</a>
+  <a href="proctor.html">Proctor Info</a>
+  <a href="attendance.html" class="active">Attendance Info</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+  <form id="regForm" action="displayatt.html" method="get" target="_self" onsubmit="tosubmit()" onreset="refresh()">
+    <div class="tab"><h2>Attendance Information:</h2>
+      Total no. of classes(till date):
+      <p><input type="number" placeholder="" oninput="this.className = ''" id="tclass" name="tclasses"></p>
+      No. of classes attended(till date):
+      <p><input type="number" placeholder="" oninput="this.className = ''" id="aclass" name="aclasses"></p>
+    </div>
+    <div style="overflow:auto;">
+       <div style="float:left;">
+        <input type="reset" id="reset">
+      </div>
+      <div style="float:right;">
+        <button type="button" id="back"><a href="index.html">Home</a></button>
+        <button type="button" id="submit" onclick="validateForm()">Check</button>
+        <input type="submit" id="submitt">
+      </div>
+    </div>
+  </form>
+
+<script type="text/javascript" src="js/script.js"></script>
+<script>
+    function tosubmit() {
+            // Getting the value of your text input
+            var tclass = document.getElementById("tclass").value;
+            var aclass = document.getElementById("aclass").value;
+            // Storing the value above into localStorage
+            localStorage.setItem("tclass", tclass);
+            localStorage.setItem("aclass", aclass);
+
+            return true;
+        }
+</script>
+</body>
+</html>

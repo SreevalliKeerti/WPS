@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment(Q1)</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="topnav" id="myTopnav">
+  <a href="index.html" class="active">Home</a>
+  <a href="personal.html">Personal Info</a>
+  <a href="academic.html">Academic Info</a>
+  <a href="proctor.html">Proctor Info</a>
+  <a href="attendance.html">Attendance Info</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+  <form id="regForm" action="" method="get" target="_self">
+    <div class="tab">
+    <h1>Welcome Student!!</h1>
+    <h5>Note: Students can fill or update their personal, academic, proctor and attendance details through this portal. While filling, students can check whether they are filling the details right or not. After submitting the form, students can view or edit the details they have entered.</h5>
+    <h3>What do you want to fill today?</h3>
+    <h5>-> <a href="personal.html">Personal Information</a></h5>
+    <h5>-> <a href="academic.html">Academic Information</a></h5>
+    <h5>-> <a href="proctor.html">Proctor Information</a></h5>
+    <h5>-> <a href="attendance.html">Attendance Information</a></h5>
+    </div>
+  </form>
+
+<script type="text/javascript" src="js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</body>
+</html>

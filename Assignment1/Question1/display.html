@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>Academic Info</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+<script>
+
+    // Called on body's `onload` event
+    function init() {
+        // Retrieving the text input's value which was stored into localStorage
+        var clg = localStorage.getItem("clg");
+        var degree = localStorage.getItem("degree");
+        var rno = localStorage.getItem("rno");
+        var year = localStorage.getItem("year");
+        var branch = localStorage.getItem("branch");
+        var section = localStorage.getItem("section");
+        var cgpa = localStorage.getItem("cgpa");
+        var yearc = localStorage.getItem("yearc");
+        var board = localStorage.getItem("board");
+        var schl = localStorage.getItem("schl");
+        var per = localStorage.getItem("per");
+        var yearco = localStorage.getItem("yearco");
+        var boardc = localStorage.getItem("boardc");
+        var school = localStorage.getItem("school");
+        var percen = localStorage.getItem("percen");
+        // Writing the value in the document
+        document.getElementById("clg").innerHTML = "College Name: " + clg;
+        document.getElementById("degree").innerHTML = "Degree: " + degree;
+        document.getElementById("rno").innerHTML = "Rollnumber: " + rno;
+        document.getElementById("year").innerHTML = "Year of Study: " + year;
+        document.getElementById("branch").innerHTML = "Branch: " + branch;
+        document.getElementById("section").innerHTML = "Section: " + section;
+        document.getElementById("cgpa").innerHTML = "CGPA: " + cgpa;
+        document.getElementById("yearc").innerHTML = "Year of Completion: " + yearc;
+        document.getElementById("board").innerHTML = "Board: " + board;
+        document.getElementById("schl").innerHTML = "School Name: " + schl;
+        document.getElementById("per").innerHTML = "Percentage: " + per;
+         document.getElementById("yearco").innerHTML = "Year of Completion: " + yearco;
+        document.getElementById("boardc").innerHTML = "Board: " + boardc;
+        document.getElementById("school").innerHTML = "School Name: " + school;
+        document.getElementById("percen").innerHTML = "Percentage: " + percen;
+        
+    }
+
+</script>
+</head>    
+
+<body onload="init();">
+	<div id="regForm">
+		<div id="tab">
+			<h2>Academic Information</h2>
+            <h3>Graduation Details:</h3>
+            <p id="clg"></p>
+            <p id="degree"></p>
+			<p id="rno"></p>
+			<p id="year"></p>
+			<p id="branch"></p>
+			<p id="section"></p>
+			<p id="cgpa"></p>
+            <h3>XII Details:</h3>
+            <p id="yearc"></p>
+            <p id="board"></p>
+            <p id="schl"></p>
+            <p id="per"></p>
+            <h3>X Details:</h3>
+            <p id="yearco"></p>
+            <p id="boardc"></p>
+            <p id="school"></p>
+            <p id="percen"></p>
+            <div style="float:left;">
+                <button type="button" id="back" onclick="history.back()">Edit</button>
+            </div>
+			<div style="float:right;">
+				<button type="button" id="back"><a href="index.html">Home</a></button>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proctor Info</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script>
+    function tosubmit() {
+            // Getting the value of your text input
+            var pid = document.getElementById("pid").value;
+            var pname = document.getElementById("pname").value;
+            var pemail = document.getElementById("pemail").value;
+            var pphone = document.getElementById("pphone").value;
+            // Storing the value above into localStorage
+            localStorage.setItem("pid", pid);
+            localStorage.setItem("pname", pname);
+            localStorage.setItem("pemail", pemail);
+            localStorage.setItem("pphone", pphone);
+
+            return true;
+        }
+  </script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+  <div class="topnav" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="personal.html">Personal Info</a>
+  <a href="academic.html">Academic Info</a>
+  <a href="proctor.html" class="active">Proctor Info</a>
+  <a href="attendance.html">Attendance Info</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+  <form id="regForm" action="displayproctor.html" method="get" target="_self" onsubmit="tosubmit()" onreset="refresh()">
+    <div class="tab"><h2>Proctor Information:</h2>
+      Proctor ID:
+      <p><input type="text" placeholder="Proctor ID" oninput="this.className = ''" maxlength="4" id="pid" name="pid"></p>
+      Proctor Name:
+      <p><input type="text" placeholder="Proctor Name" oninput="this.className = ''" id="pname" name="pname"></p>
+      Contact Info:
+      <p><input type="email" placeholder="Proctor E-mail" oninput="this.className = ''" name="email" id="pemail" required></p>
+      <p><input type="number" placeholder="Proctor Phone Number" oninput="this.className = ''" id="pphone" name="pphone" onchange="validatenumber()" required></p>
+    </div>
+    <div style="overflow:auto;">
+       <div style="float:left;">
+        <input type="reset" id="reset">
+      </div>
+      <div style="float:right;">
+        <button type="button" id="back"><a href="index.html">Home</a></button>
+        <button type="button" id="submit" onclick="validateForm()">Check</button>
+        <input type="submit" id="submitt">
+      </div>
+    </div>
+
+  </form>
+
+<script type="text/javascript" src="js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  const pemailField = document.getElementById('pemail');
+  const pphNo = document.getElementById('pphone');
+  const moveon = document.getElementById('submit');
+
+  pemailField.addEventListener('change', function (event) {
+    isValidEmail = pemailField.checkValidity();
+    
+    if ( isValidEmail ) {
+      moveon.disabled=false;
+    } else {
+      moveon.disabled=true;
+      alert("Enter valid email address");
+    }
+  });
+
+  function validatenumber()
+  {
+    var phoneNumber = document.getElementById('pphone').value;
+    var phoneRGEX = /^[0-9]{10}$/;
+    var phoneResult = phoneRGEX.test(phoneNumber);
+    if(phoneResult){
+       moveon.disabled=false;
+    } else {
+      moveon.disabled=true;
+      alert("Enter valid phone number");
+    }
+  }
+</script>
+
+</body>
+</html>

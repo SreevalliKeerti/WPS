@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Personal Info</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+<script>
+
+    // Called on body's `onload` event
+    function init() {
+        // Retrieving the text input's value which was stored into localStorage
+        var fname = localStorage.getItem("fname");
+        var lname = localStorage.getItem("lname");
+        var dname = localStorage.getItem("dname");
+        var mname = localStorage.getItem("mname");
+        var email = localStorage.getItem("email");
+        var phone = localStorage.getItem("phone");
+        var dob = localStorage.getItem("dob");
+        var req = localStorage.getItem("req");
+        // Writing the value in the document
+        document.getElementById("fname").innerHTML = "First Name: " + fname;
+        document.getElementById("lname").innerHTML = "Last Name: " + lname;
+        document.getElementById("dname").innerHTML = "Father Name: " + dname;
+        document.getElementById("mname").innerHTML = "Mother Name: " + mname;
+        document.getElementById("email").innerHTML = "Email Address: " + email;
+        document.getElementById("phone").innerHTML = "Phone Number: " + phone;
+        document.getElementById("dob").innerHTML = "Date of Birth: " + dob;
+        document.getElementById("req").innerHTML = "Gender: " + req;
+        
+    }
+
+</script>
+</head>    
+
+<body onload="init();">
+	<div id="regForm">
+		<div id="tab">
+			<h2>Personal Information</h2>
+			<p id="fname"></p>
+			<p id="lname"></p>
+			<p id="dname"></p>
+			<p id="mname"></p>
+			<p id="email"></p>
+			<p id="phone"></p>
+			<p id="dob"></p>
+			<p id="req"></p>
+            <div style="float:left;">
+                <button type="button" id="back" onclick="history.back()">Edit</button>
+            </div>
+			<div style="float:right;">
+				<button type="button" id="back"><a href="index.html">Home</a></button>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
