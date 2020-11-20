@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8" /> 
+        <meta name="viewport" 
+              content="width=device-width, initial-scale=1.0" /> 
+      <title>Question 3</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <style>
+        table#alk-table tr th {
+          width: 100px;
+        }
+      </style>
+  </head>
+  <body>
+    <table id="alk-table" border="1">
+      <thead><tr><th>Id</th><th>Name</th><th>Year</th><th>Color</th><th>Pantone Value</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <script>
+          $.ajax({
+            url: "https://reqres.in/api/register",
+            data: {},
+            beforeSend: function(){}
+            }).done(function(response) {
+                var trArr = new Array();
+                $.each(response.data, function(i, v){
+                  trArr.push('<tr><td>' + v.id + '</td><td>' + v.name + '</td><td>' + v.year + '</td><td>' + v.color + '</td><td>' + v.pantone_value +'</td></tr>');
+                });
+                $('table#alk-table tbody').append(trArr.join('\n'));
+            });
+    </script>
+  </body>
+</html>
